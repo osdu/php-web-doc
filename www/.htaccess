@@ -1,3 +1,6 @@
+# http://doc.php.io
+# https://github.com/php/web-doc
+
 RewriteEngine On
 
 # tutorial rewrites
@@ -5,6 +8,9 @@ RewriteRule ^(((.+)/)+)?dochowto(/)?$ /$1tutorial/ [L,R=301]
 RewriteRule ^(((.+)/)+)?tutorial$ /$1tutorial/ [L,R=301]
 RewriteRule ^tutorial/$ /tutorial.php?chapter=intro [L]
 RewriteRule ^tutorial/([a-z\-]*).php$ /tutorial.php?chapter=$1 [L]
+
+RewriteRule ^phd/docs/$ /phd-docs.php?chapter=index [L]
+RewriteRule ^phd/docs/([a-z\-]*).php$ /phd-docs.php?chapter=$1 [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
